@@ -9,7 +9,7 @@ LABEL maintainer="arouzing"
 RUN \
   echo "**** install packages ****" && \
   apk add --no-cache --virtual=build-dependencies flatpak 
-RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
+RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 RUN flatpak install -y flathub md.obsidian.Obsidian 
 
 # add local files
