@@ -10,6 +10,7 @@ RUN \
   echo "**** install packages ****" && \
   apk add --no-cache --virtual=build-dependencies \
     flatpak && \ 
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
     flatpak install flathub md.obsidian.Obsidian
 
 # add local files
