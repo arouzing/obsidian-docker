@@ -9,7 +9,7 @@ LABEL maintainer="arouzing"
 
 RUN \
   echo "**** install packages ****" && \
-  apt-get update && apt-get install -y nano libnss3 zenity
+  apt-get update && apt-get install -y nano libnss3
 RUN \
 LOCATION=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest \
 | grep "tag_name" \
