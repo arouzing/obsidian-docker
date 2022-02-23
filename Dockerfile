@@ -16,7 +16,8 @@ LOCATION=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/rel
 | awk '{print "https://github.com/obsidianmd/obsidian-releases/releases/download/v" substr($2, 3, length($2)-4) "/Obsidian-" substr($2, 3, length($2)-4) ".AppImage"}') \
 ; curl -L -o /opt/obsidian.AppImage $LOCATION
 RUN chmod a+x /opt/obsidian.AppImage && \
-  ./opt/obsidian.AppImage --appimage-extract
+  cd /opt && \
+  ./obsidian.AppImage --appimage-extract
 
 # add local files
 COPY /root /
