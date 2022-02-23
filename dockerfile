@@ -1,4 +1,4 @@
-FROM lsiobase/rdesktop-web:alpine
+FROM lsiobase/rdesktop-web:latest
 
 # set version label
 ARG BUILD_DATE
@@ -8,8 +8,7 @@ LABEL maintainer="arouzing"
 
 RUN \
   echo "**** install packages ****" && \
-  apk add --no-cache --virtual=build-dependencies curl
-RUN mkdir /home/abc/
+  apt install --no-recomends -y curl
 RUN \
 LOCATION=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest \
 | grep "tag_name" \
