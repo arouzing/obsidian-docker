@@ -9,7 +9,7 @@ LABEL maintainer="arouzing"
 
 RUN \
   echo "**** install packages ****" && \
-  apt install -y curl nano libnss3
+  apt install -y curl nano libnss3-tools
 RUN \
 LOCATION=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest \
 | grep "tag_name" \
